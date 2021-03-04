@@ -15,6 +15,10 @@
             <input type="password" class="form-control" name="password" id="password" aria-describedby="password_response">
             <div id="password_response" class="form-text">Password response.</div>
         </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" name="stay" id="stay" <?= set_value('stay') ? "checked" : null ?>>
+            <label class="form-check-label" for="stay">Stay logged in</label>
+        </div>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
 <?= $this->endSection() ?>

@@ -18,14 +18,14 @@
         <div class="collapse navbar-collapse" id="top_navbar">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link<?= strtolower($title) == 'welcome' ? ' active' : null ?>" href="/">Home</a>
                 </li>
                 <?php if( !session()->get('user') ): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link<?= strtolower($title) == 'login' ? ' active' : null ?>" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/signup">Signup</a>
+                    <a class="nav-link<?= strtolower($title) == 'signup' ? ' active' : null ?>" href="/signup">Signup</a>
                 </li>
                 <?php endif; ?>
                 <?php if( session()->get('user') ): ?>
@@ -34,6 +34,7 @@
                         <?= session()->get('user')['first_name'] ?>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/#">Profile</a></li>
                         <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
                 </li>
